@@ -58,7 +58,7 @@
 | 타일맵 생성 · 텍스처 갱신 · 포스트프로세스 연결 | [`FOWTileMap.cpp`](https://github.com/tang-ka/POTENUP-LeagueofLegends/blob/34423f7a95cc50150baefaacb9011a2e56668afb/Source/LeagueofLegends/private/FOW/FOWTileMap.cpp) |
 | Marching Squares 업스케일러 | [`FOWUpscaler.cpp`](https://github.com/tang-ka/POTENUP-LeagueofLegends/blob/34423f7a95cc50150baefaacb9011a2e56668afb/Source/LeagueofLegends/private/FOW/FOWUpscaler.cpp) |
 | 시야 제공자 인터페이스 | [`SightProvider.h`](https://github.com/tang-ka/POTENUP-LeagueofLegends/blob/34423f7a95cc50150baefaacb9011a2e56668afb/Source/LeagueofLegends/public/Interfaces/SightProvider.h) |
-| 분수 기반 기울기 · 사분면 구조체 | [`FOWManager.h`](https://github.com/tang-ka/POTENUP-LeagueofLegends/blob/34423f7a95cc50150baefaacb9011a2e56668afb/Source/LeagueofLegends/public/FOW/FOWManager.h) |
+| 분수 기반 기울기 · 사분면 구조체 | [`FOWManager.h`](https://github.com/tang-ka/POTENUP-LeagueofLegends/blob/9208a8506e9c4740dc15cbbbec6d506a8c058227/Source/LeagueofLegends/public/FOW/FOWManager.h) |
 
 ---
 
