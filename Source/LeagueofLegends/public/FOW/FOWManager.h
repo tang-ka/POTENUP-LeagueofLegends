@@ -53,22 +53,39 @@ struct FFraction
 	GENERATED_BODY()
 
 	int32 Numerator = 0; // 분자
-	int32 Denominator = 1; // 분모
+	int32 Denominator = 1; // 분모 (항상 양수: 1 또는 Depth * 2)
+
+	// 정수 나눗셈(/)은 0 방향으로 절삭되므로, 음수 분자에서도 수학적 floor/ceil이 되도록 보정 (B > 0)
+	static int32 FloorDiv(int32 A, int32 B)
+	{
+		int32 Q = A / B;
+		if ((A % B != 0) && (A < 0))
+		{
+			--Q;
+		}
+		return Q;
+	}
+
+	static int32 CeilDiv(int32 A, int32 B)
+	{
+		int32 Q = A / B;
+		if ((A % B != 0) && (A > 0))
+		{
+			++Q;
+		}
+		return Q;
+	}
 
 	int32 RoundTiesUp() const
 	{
 		// floor((2*Numerator + Denominator) / (2*Denominator))
-		int32 Num = 2 * Numerator + Denominator;
-		int32 Den = 2 * Denominator;
-		return FMath::FloorToInt(static_cast<float>(Num) / Den);
+		return FloorDiv(2 * Numerator + Denominator, 2 * Denominator);
 	}
 
 	int32 RoundTiesDown() const
 	{
 		// ceil((2*Numerator - Denominator) / (2*Denominator))
-		int32 Num = 2 * Numerator - Denominator;
-		int32 Den = 2 * Denominator;
-		return FMath::CeilToInt(static_cast<float>(Num) / Den);
+		return CeilDiv(2 * Numerator - Denominator, 2 * Denominator);
 	}
 };
 
